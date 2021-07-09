@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: customer
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5432/bank?createDatabaseIfNotExist=true
+    username: internetBank
+    password: theSecretPassword
+authserver:
+  hostname: "http://${AUTHORIZATION_HOST:localhost:9092}"
+security:
+  oauth2:
+    resource:
+      userInfoUri: ${authserver.hostname}/user
+
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    jmx:
+      exposure:
+        include: '*'
