@@ -26,3 +26,5 @@ body:
 api get user:
 localhost:8080/api/user/{id_usuario}
 
+lembrando que para fazer as chamadas precisa mandar o:
+Authorization: Bearer {token da api de login}
