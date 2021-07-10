@@ -3,6 +3,7 @@ package br.com.impacta.coleta.consciente.user.controller.impl;
 import br.com.impacta.coleta.consciente.user.controller.UserController;
 import br.com.impacta.coleta.consciente.user.dto.UserDtoRequest;
 import br.com.impacta.coleta.consciente.user.dto.UserDtoResponse;
+import br.com.impacta.coleta.consciente.user.dto.UserDtoUpdate;
 import br.com.impacta.coleta.consciente.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,5 +41,11 @@ public class UserControllerImpl implements UserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         this.userService.delete(id);
+    }
+
+    @Override
+    @PatchMapping("/{id}")
+    public UserDtoResponse update(@RequestBody UserDtoUpdate userDtoRequest, @PathVariable Long id){
+        return this.userService.update(userDtoRequest, id);
     }
 }
