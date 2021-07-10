@@ -1,10 +1,7 @@
 package br.com.impacta.coleta.consciente.user.service.impl;
 
 import br.com.impacta.coleta.consciente.user.domain.User;
-import br.com.impacta.coleta.consciente.user.dto.TokenDto;
-import br.com.impacta.coleta.consciente.user.dto.UserDto;
-import br.com.impacta.coleta.consciente.user.dto.UserDtoRequest;
-import br.com.impacta.coleta.consciente.user.dto.UserDtoResponse;
+import br.com.impacta.coleta.consciente.user.dto.*;
 import br.com.impacta.coleta.consciente.user.repository.AuthorizationServerClient;
 import br.com.impacta.coleta.consciente.user.repository.UserRepository;
 import br.com.impacta.coleta.consciente.user.service.UserService;
@@ -76,6 +73,17 @@ public class UserServiceImpl implements UserService {
         User user = this.userRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Cannot find Customer with id " + id));
         this.userRepository.delete(user);
+    }
+
+    @Override
+    public UserDtoResponse update(UserDtoUpdate userDtoRequest, Long id) {
+
+        var user = this.userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Cannot find Customer with id " + id));
+
+        user.setName(userDtoRequest.getName());
+
+        return mapToDto(this.userRepository.save(user));
     }
 
 
