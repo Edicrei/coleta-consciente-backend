@@ -3,8 +3,8 @@
 
 para rodar o projeto:
   subir docker compose
-  subir autorization-server
-  subir user
+  subir autorization-server (mvn spring-boot:run)
+  subir user (mvn spring-boot:run)
   
   
 api de login
@@ -28,3 +28,6 @@ localhost:8080/api/user/{id_usuario}
 
 lembrando que para fazer as chamadas precisa mandar o:
 Authorization: Bearer {token da api de login}
+
+disponibilizado Swagger do projeto User
+http://localhost:8080/swagger-ui.html
