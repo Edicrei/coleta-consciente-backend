@@ -16,11 +16,6 @@ import lombok.Data;
 public class Address implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-	@Valid
-	@NotNull
-	@Embedded
-	private Coordinates coordinates;
 	
 	@NotBlank
 	@Column(nullable = false)
@@ -31,4 +26,9 @@ public class Address implements Serializable {
 	private String number;
 	
 	private String complement;
+
+	@Valid
+	@NotNull
+	@Embedded
+	private Coordinates coordinates;
 }

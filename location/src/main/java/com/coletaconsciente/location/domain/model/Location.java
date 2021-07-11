@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -33,6 +34,21 @@ public class Location implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	private Long id;
+	
+	@NotBlank
+	private String name;
+
+	@Valid
+	@NotNull
+	@Embedded
+	private Address address;
+	
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private Material material;
+	
+	@Column(name = "is_Valid", nullable = false)
+	private Boolean isValid;
 
 	@CreationTimestamp
 	@Column(name = "registration_date", nullable = false, columnDefinition = "datetime")
@@ -42,12 +58,6 @@ public class Location implements Serializable {
 	@Column(name = "update_date", nullable = false, columnDefinition = "datetime")
 	private LocalDateTime updateDate;
 	
-	@Valid
-	@NotNull
-	@Embedded
-	private Address address;
-	
-	@Column(nullable = false)
-	@Enumerated(EnumType.STRING)
-	private Material material;
+	@Column(name = "user_id", nullable = false)
+	private Long userId;
 }

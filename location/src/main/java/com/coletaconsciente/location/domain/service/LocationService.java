@@ -35,7 +35,7 @@ public class LocationService {
 	
 	public Location update(Long locationId, Location location) {
 		Location persistedLocation =findById(locationId);
-		BeanUtils.copyProperties(location, persistedLocation, "id", "regristationDate");
+		BeanUtils.copyProperties(location, persistedLocation, "id", "registrationDate", "updateDate");
 
 		return save(persistedLocation);
 	}
