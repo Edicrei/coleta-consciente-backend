@@ -15,7 +15,9 @@ import com.coletaconsciente.faleconosco.repository.FaleConoscoRepository;
 import com.coletaconsciente.faleconosco.mappers.FaleConoscoMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class FaleConoscoService {
 
     @Autowired
@@ -55,13 +57,11 @@ public class FaleConoscoService {
         if (faleConosco.isEmpty()) {
             return postForm(faleConoscoRequestDto);
         } else {
-            return FaleConoscoMapper.mapFaleConoscoToFaleConoscoDto(faleConoscoRepository.save(
-                faleConosco.get().builder()
-                .name(faleConoscoRequestDto.getName())
-                .email(faleConoscoRequestDto.getEmail())
-                .phone(faleConoscoRequestDto.getPhone())
-                .message(faleConoscoRequestDto.getMessage())
-                .build()));
+            FaleConosco obj = faleConosco.get();
+            obj.setName(faleConoscoRequestDto.getName());
+            obj.setPhone(faleConoscoRequestDto.getPhone());
+            obj.setEmail(faleConoscoRequestDto.getMessage());
+            return FaleConoscoMapper.mapFaleConoscoToFaleConoscoDto(faleConoscoRepository.save(obj));
         }
     }
 

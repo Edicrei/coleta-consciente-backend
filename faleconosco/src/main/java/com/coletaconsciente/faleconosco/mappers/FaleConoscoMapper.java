@@ -8,10 +8,11 @@ public class FaleConoscoMapper {
 
     public static FaleConoscoResponseDto mapFaleConoscoToFaleConoscoDto (FaleConosco faleConosco) {
         return FaleConoscoResponseDto.builder()
-            .email(faleConosco.getEmail())
-            .name(faleConosco.getName())
-            .phone(faleConosco.getPhone())
-            .message(faleConosco.getMessage()).build();
+                .id(faleConosco.getId())
+                .email(faleConosco.getEmail())
+                .name(faleConosco.getName())
+                .phone(faleConosco.getPhone())
+                .message(faleConosco.getMessage()).build();
     }
 
     public static FaleConosco mapeFaleConoscoRequestDtoToFaleConosco (FaleConoscoRequestDto faleConoscoRequestDto) {

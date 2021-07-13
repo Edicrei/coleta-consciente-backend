@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Builder
 @Data
-@Entity
+@Entity(name = "fale_conosco")
 public class FaleConosco {
 
     @Id
@@ -29,6 +29,10 @@ public class FaleConosco {
 
     @Column(nullable = false)
     private String message;
+
+    public FaleConosco() {
+        super();
+    }
 
     public FaleConosco(Long id, String name, String phone, String email, String message) {
         super();
