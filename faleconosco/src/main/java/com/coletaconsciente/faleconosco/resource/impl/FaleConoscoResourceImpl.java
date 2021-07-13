@@ -50,7 +50,7 @@ public class FaleConoscoResourceImpl implements FaleConoscoResource {
         }
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public FaleConoscoResponseDto update(@RequestBody FaleConoscoRequestDto faleConoscoRequestDto, @PathVariable Long id) {
         try {
             return faleConoscoService.putForm(faleConoscoRequestDto, id);
