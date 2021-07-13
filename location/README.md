@@ -6,9 +6,9 @@ O serviço conta com os perfis `dev` e `prod`.
 Para alterar o perfil atual, basta alterar o valor da chave `spring.profiles.active` no arquivo `src/main/resources/application.properties`.  
 O perfil `dev` está configurado para rodar na porta 8083. Para alterar a porta deste perfil, é necessário alterar o valor da chave `server.port` no arquivo `src/main/resources/application-dev.properties`.  
   
-## Json de um local  
+## Json de um local de coleta  
   
-A representação de um local, presente nas requisições e repostas deste serviço, segue o seguinte padrão:  
+A representação de um local de coleta, presente nas requisições e repostas deste serviço, segue o seguinte padrão:  
 ```json  
 {
     "id": Number,
@@ -32,7 +32,7 @@ A representação de um local, presente nas requisições e repostas deste servi
 * `number` é do tipo 'String', para poder abranger localizações com endereços sem número, representados como `s/n`  
 * `latitude` e `longitude` são decimais, que pode ser positivos ou negativos  
 * `material` aceita apenas os valores `BATERIA`, `PILHA`, `AMBOS`  
-* `id`, `registrationDate` e `updateDate` não devem ser informados no CORPO das requisições. Serão informados apenas nas repostas  
+* `id`, `registrationDate` e `updateDate` não devem ser informados no corpo das REQUISIÇÕES. Serão informados apenas nas repostas  
   
 ## Recursos disponíveis  
   
