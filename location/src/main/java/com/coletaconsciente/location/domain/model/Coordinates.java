@@ -1,6 +1,5 @@
 package com.coletaconsciente.location.domain.model;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -11,10 +10,8 @@ import lombok.Data;
 
 @Data
 @Embeddable
-public class Coordinates implements Serializable {
+public class Coordinates {
 	
-	private static final long serialVersionUID = 1L;
-
 	@NotNull
 	@Column(nullable = false)
 	private BigDecimal latitude;

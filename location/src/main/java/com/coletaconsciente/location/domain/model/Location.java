@@ -1,6 +1,5 @@
 package com.coletaconsciente.location.domain.model;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -26,9 +25,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "tb_location")
-public class Location implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+public class Location {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +33,7 @@ public class Location implements Serializable {
 	private Long id;
 	
 	@NotBlank
+	@Column(nullable = false)
 	private String name;
 
 	@Valid
@@ -47,6 +45,7 @@ public class Location implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Material material;
 	
+	@NotNull
 	@Column(name = "is_Valid", nullable = false)
 	private Boolean isValid;
 
@@ -58,6 +57,7 @@ public class Location implements Serializable {
 	@Column(name = "update_date", nullable = false, columnDefinition = "datetime")
 	private LocalDateTime updateDate;
 	
+	@NotNull
 	@Column(name = "user_id", nullable = false)
 	private Long userId;
 }

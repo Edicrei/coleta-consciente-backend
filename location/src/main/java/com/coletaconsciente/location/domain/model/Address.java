@@ -1,7 +1,5 @@
 package com.coletaconsciente.location.domain.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
@@ -13,9 +11,7 @@ import lombok.Data;
 
 @Data
 @Embeddable
-public class Address implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class Address {
 	
 	@NotBlank
 	@Column(nullable = false)

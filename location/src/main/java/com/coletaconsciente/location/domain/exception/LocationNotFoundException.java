@@ -13,8 +13,4 @@ public class LocationNotFoundException extends RuntimeException {
 	public LocationNotFoundException(Long id) {
 		this(String.format(LOCATION_NOT_FOUND_EXCEPTION, id));
 	}
-	
-	public LocationNotFoundException(String mensagem, Throwable causa) {
-		super(mensagem, causa);
-	}
 }
