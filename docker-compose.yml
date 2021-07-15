@@ -5,9 +5,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=internetBank
+      - POSTGRES_USER=coletaconsciente
       - POSTGRES_PASSWORD=theSecretPassword
-      - POSTGRES_DB=bank
+      - POSTGRES_DB=coletaDB
     volumes:
       - pg_data:/var/lib/postgresql/data
   pgadmin:

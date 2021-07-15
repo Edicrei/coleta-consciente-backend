@@ -10,8 +10,8 @@ spring:
     show-sql: true
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5432/bank?createDatabaseIfNotExist=true
-    username: internetBank
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5432/coletaDB?createDatabaseIfNotExist=true
+    username: coletaconsciente
     password: theSecretPassword
 authserver:
   hostname: "http://${AUTHORIZATION_HOST:localhost:9092}"
