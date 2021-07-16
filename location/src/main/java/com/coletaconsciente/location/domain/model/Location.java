@@ -50,11 +50,11 @@ public class Location {
 	private Boolean isValid;
 
 	@CreationTimestamp
-	@Column(name = "registration_date", nullable = false, columnDefinition = "datetime")
+	@Column(name = "registration_date", nullable = false, columnDefinition = "timestamp")
 	private LocalDateTime registrationDate;
 	
 	@UpdateTimestamp
-	@Column(name = "update_date", nullable = false, columnDefinition = "datetime")
+	@Column(name = "update_date", nullable = false, columnDefinition = "timestamp")
 	private LocalDateTime updateDate;
 	
 	@NotNull
