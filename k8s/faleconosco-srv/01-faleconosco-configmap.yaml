@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: faleconosco-configmap
+  namespace: coletaconsciente
+data:
+  POSTGRES_HOST: postgres-svc

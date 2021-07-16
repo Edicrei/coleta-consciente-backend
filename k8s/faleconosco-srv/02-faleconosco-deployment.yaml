@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: faleconosco
+  namespace: coletaconsciente
+  labels:
+    app: faleconosco
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: faleconosco
+  template:
+    spec:
+      containers:
+        - name: faleconosco
+          image: jmarquessilva/faleconosco:1.0
+          ports:
+            - containerPort: 8090
+          envFrom:
+            - configMapRef:
+                name: faleconosco-configmap
