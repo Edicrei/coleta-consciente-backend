@@ -52,8 +52,8 @@ public class LocationControllerImpl {
 	}
 	
 	@PatchMapping("/{locationId}")
-	public Location partilUpdate(@PathVariable Long locationId, @RequestBody Map<String, Object> fields, HttpServletRequest request) {
-		return locationService.partilUpdate(locationId, fields, request);
+	public Location partialUpdate(@PathVariable Long locationId, @RequestBody Map<String, Object> fields, HttpServletRequest request) {
+		return locationService.partialUpdate(locationId, fields, request);
 	}
 
 	@DeleteMapping("/{locationId}")

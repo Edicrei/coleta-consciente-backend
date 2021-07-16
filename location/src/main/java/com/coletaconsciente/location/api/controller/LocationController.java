@@ -26,6 +26,6 @@ public interface LocationController {
 	public Location findById(@PathVariable("locationId") Long id);
 	public Location save(@RequestBody @Valid Location location);
 	public Location update(@PathVariable Long locationId, @RequestBody @Valid Location location);
-	public Location partilUpdate(@PathVariable Long locationId, @RequestBody Map<String, Object> fields, HttpServletRequest request);
+	public Location partialUpdate(@PathVariable Long locationId, @RequestBody Map<String, Object> fields, HttpServletRequest request);
 	public void remove(@PathVariable Long locationId);
 }
