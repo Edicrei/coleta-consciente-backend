@@ -45,6 +45,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDtoResponse findByEmail(String email) {
+        var userDtoResponse = this.userRepository.findByEmail(email);
+
+        return mapToDto(userDtoResponse);
+
+    }
+
+    @Override
     public UserDtoResponse createUser(UserDtoRequest userDtoRequest) {
 
         var user = mapToDto(
@@ -85,7 +93,6 @@ public class UserServiceImpl implements UserService {
 
         return mapToDto(this.userRepository.save(user));
     }
-
 
     public static UserDtoResponse mapToDto(User user) {
         if (user != null) {
