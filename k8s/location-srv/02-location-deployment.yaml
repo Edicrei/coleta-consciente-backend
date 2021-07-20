@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location
+  namespace: coletaconsciente
+  labels:
+    app: location
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: location
+  template:
+    metadata:
+      labels:
+        app: location
+    spec:
+      containers:
+        - name: location
+          image: jmarquessilva/localtion:1.0
+          ports:
+            - containerPort: 8083
+          envFrom:
+            - configMapRef:
+                name: location-configmap

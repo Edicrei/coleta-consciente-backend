@@ -11,12 +11,15 @@ spec:
     matchLabels:
       app: faleconosco
   template:
+    metadata:
+      labels:
+        app: faleconosco
     spec:
       containers:
         - name: faleconosco
           image: jmarquessilva/faleconosco:1.0
           ports:
-            - containerPort: 8090
+            - containerPort: 8082
           envFrom:
             - configMapRef:
                 name: faleconosco-configmap

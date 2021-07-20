@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: faleconosco-svc
+  name: user-svc
   namespace: coletaconsciente
   labels:
-    app: faleconosco
+    app: user
 spec:
   type: ClusterIP
   selector:
-    app: faleconosco
+    app: user
   ports:
-    - port: 8082
-      targetPort: 8082
+    - port: 8080
+      targetPort: 8080
