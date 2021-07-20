@@ -56,7 +56,7 @@ public class LocationService {
 		return save(persistedLocation);
 	}
 	
-	public Location partilUpdate(Long locationId, Map<String, Object> fields, HttpServletRequest request) {
+	public Location partialUpdate(Long locationId, Map<String, Object> fields, HttpServletRequest request) {
 		Location persistedLocation = findById(locationId);
 		merge(fields, persistedLocation, request);
 		validate(persistedLocation, "restaurante");

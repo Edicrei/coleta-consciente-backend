@@ -23,5 +23,6 @@ public interface UserController {
     List<UserDtoResponse> findAll();
     void delete(Long id);
     UserDtoResponse update(@RequestBody UserDtoUpdate userDtoRequest, @PathVariable Long id);
+    UserDtoResponse findByEmail(@PathVariable String email);
 
 }

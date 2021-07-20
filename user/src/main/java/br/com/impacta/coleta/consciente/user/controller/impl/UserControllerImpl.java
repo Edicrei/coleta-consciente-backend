@@ -31,6 +31,12 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
+    @GetMapping("/email/{email}")
+    public UserDtoResponse findByEmail(@PathVariable String email) {
+        return this.userService.findByEmail(email);
+    }
+
+    @Override
     @GetMapping
     public List<UserDtoResponse> findAll() {
         return this.userService.findAll();
