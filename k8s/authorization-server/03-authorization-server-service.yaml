@@ -6,7 +6,7 @@ metadata:
   labels:
     app: authorization-server
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: authorization-server
   ports:
