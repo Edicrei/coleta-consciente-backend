@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: user
-          image: jmarquessilva/user:1.0
+          image: jmarquessilva/user:1.1
           ports:
             - containerPort: 8080
           envFrom:

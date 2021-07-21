@@ -4,14 +4,9 @@ metadata:
   name: ingress
   namespace: coletaconsciente
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    kubernetes.io/ingress.class: ambassador
 spec:
   ingressClassName: ingress
-  defaultBackend:
-    service:
-      name: default-http-backend
-      port:
-        number: 80
   rules:
     - host: coletaconsciente.com.br
       http:
@@ -20,27 +15,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: faleconosco-svc
-                port:
-                  number: 8082
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: authorization-server-svc
+                name: faleconosco
                 port:
                   number: 9092
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: user-svc
-                port:
-                  number: 8080
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: location-svc
-                port:
-                  number: 8083

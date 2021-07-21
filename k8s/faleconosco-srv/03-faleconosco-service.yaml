@@ -6,7 +6,7 @@ metadata:
   labels:
     app: faleconosco
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: faleconosco
   ports:

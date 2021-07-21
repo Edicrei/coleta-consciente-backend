@@ -5,4 +5,4 @@ metadata:
   namespace: coletaconsciente
 data:
   POSTGRES_HOST: postgres-svc
-  AUTHORIZATION_HOST: authorization-server-svc
+  AUTHORIZATION_HOST: authorization-server-svc:9092
