@@ -95,6 +95,24 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "5. Actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-fale-conosco}}/actuator/health",
+							"host": [
+								"{{url-fale-conosco}}"
+							],
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -269,6 +287,24 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "7. Actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-user}}/actuator/health",
+							"host": [
+								"{{url-user}}"
+							],
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -390,6 +426,30 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "5. Actuator",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-user}}/actuator/health",
+							"host": [
+								"{{url-user}}"
+							],
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -446,6 +506,30 @@
 									"key": "password",
 									"value": "123456"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. Actuator",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-auth}}/actuator/health",
+							"host": [
+								"{{url-auth}}"
+							],
+							"path": [
+								"actuator",
+								"health"
 							]
 						}
 					},
