@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "4eb3fe5a-07d7-4955-a6de-5058f87d3006",
+		"name": "Bootcamp FSD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "fale-direto",
+			"item": [
+				{
+					"name": "1. Obter todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-fale-conosco}}/fale-conosco",
+							"host": [
+								"{{url-fale-conosco}}"
+							],
+							"path": [
+								"fale-conosco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Criar registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Rafael\",\n    \"phone\": \"5511966076355\",\n    \"email\": \"rafael@email.com\",\n    \"message\": \"Sugiro likes por pontos!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-fale-conosco}}/fale-conosco",
+							"host": [
+								"{{url-fale-conosco}}"
+							],
+							"path": [
+								"fale-conosco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Editar registro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Joana Dark\",\n    \"phone\": \"5511966076355\",\n    \"email\": \"rafael@email.com\",\n    \"message\": \"Pontos de coleta destacados por tipo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-fale-conosco}}/fale-conosco/1",
+							"host": [
+								"{{url-fale-conosco}}"
+							],
+							"path": [
+								"fale-conosco",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Deletar registro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-fale-conosco}}/fale-conosco/3",
+							"host": [
+								"{{url-fale-conosco}}"
+							],
+							"path": [
+								"fale-conosco",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "location",
+			"item": [
+				{
+					"name": "1. Obter todos location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-location}}/location",
+							"host": [
+								"{{url-location}}"
+							],
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Criar location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Museu Afro Brasil\",\r\n    \"address\": {\r\n        \"street\": \"Avenida Pedro Álvares Cabral\",\r\n        \"number\": \"s/n\",\r\n        \"complement\": \"Portão 10\",\r\n        \"coordinates\": {\r\n            \"latitude\": -23.58351754725252,\r\n            \"longitude\": -46.65950575002301\r\n        }\r\n    },\r\n    \"material\": \"AMBOS\",\r\n    \"isValid\": true,\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-location}}/location",
+							"host": [
+								"{{url-location}}"
+							],
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Obter location por id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-location}}/location/1",
+							"host": [
+								"{{url-location}}"
+							],
+							"path": [
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Editar location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Museu Afro Brasil\",\r\n    \"address\": {\r\n        \"street\": \"Avenida Pedro Álvares Cabral\",\r\n        \"number\": \"s/n\",\r\n        \"complement\": \"Portão 10\",\r\n        \"coordinates\": {\r\n            \"latitude\": -23.58351754725252,\r\n            \"longitude\": -46.65950575002301\r\n        }\r\n    },\r\n    \"material\": \"AMBOS\",\r\n    \"isValid\": true,\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-location}}/location/1",
+							"host": [
+								"{{url-location}}"
+							],
+							"path": [
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Editar parcial location",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Museu Afro Brasil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-location}}/location/1",
+							"host": [
+								"{{url-location}}"
+							],
+							"path": [
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Deletar location",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-location}}/location/1",
+							"host": [
+								"{{url-location}}"
+							],
+							"path": [
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "1. Get user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-user}}/api/user",
+							"host": [
+								"{{url-user}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Salvar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jefferson\",\r\n    \"email\": \"jefferson_marques14@hotmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-user}}/api/user",
+							"host": [
+								"{{url-user}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Editar user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Jefferson Marques\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-user}}/api/user/1",
+							"host": [
+								"{{url-user}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-user}}/api/user/1",
+							"host": [
+								"{{url-user}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"access_token\", jsonData.access_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic Y29kZXJlZjokMmEkMTAkcDlQazBmUU5BUVNlc0k0dnV2S0EwT1phbkREMg==",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-auth}}/oauth/token?grant_type=password&username=admin@admin.com&password=123456",
+							"host": [
+								"{{url-auth}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "username",
+									"value": "admin@admin.com"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-configmap
+  namespace: coletaconsciente
+data:
+  POSTGRES_USER: coletaconsciente
+  POSTGRES_PASSWORD: theSecretPassword
+  POSTGRES_DB: coletaDB

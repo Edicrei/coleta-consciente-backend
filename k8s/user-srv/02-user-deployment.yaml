@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user
+  namespace: coletaconsciente
+  labels:
+    app: user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      containers:
+        - name: user
+          image: jmarquessilva/user:1.1
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: user-configmap
