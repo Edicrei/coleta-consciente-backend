@@ -42,7 +42,7 @@ public class LocationControllerImpl {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Location save(@RequestBody @Valid Location location) {
+	public Location save(@RequestBody Location location) {
 		return locationService.save(location);
 	}
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.Map;
 
-@FeignClient(url="http://localhost:9092", name = "authorization-server")
+@FeignClient(url="${authserver.hostname}", name = "authorization-server")
 public interface AuthorizationServerClient {
 
     @PostMapping("/oauth/token?grant_type=password&username={username}&password={password}")
